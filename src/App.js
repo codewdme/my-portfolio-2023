@@ -1,25 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import Navbar from "./Components/Navbar";
+import AddProjectInfoForm from "./Components/AddProjectInfoForm";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Content from "./Content";
+import Validation from "./Components/Validation";
+import PortfolioState from "./context/notes/portfolioState";
 
-function App() {
+export default function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <PortfolioState>
+      <Router>
+        <div className="text-gray bg-matt-black bg-repeat font-poppins flex max-w-screen ">
+          <div className="">
+            <Navbar />
+          </div>
+          <Routes>
+            <Route path="/" element={<Content />} />
+            <Route path="/addprojectinfo" element={<AddProjectInfoForm />} />
+            <Route path="/validation" element={<Validation />} />
+          </Routes>
+        </div>
+      </Router>
+    </PortfolioState>
   );
 }
-
-export default App;

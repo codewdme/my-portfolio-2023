@@ -1,13 +1,56 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,500&display=swap");
+
+.text-vertical {
+  writing-mode: vertical-lr;
+}
+a {
+  cursor: pointer;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body {
+  background-color: #111111;
+}
+
+section {
+  @apply flex justify-center items-center p-2 sm:p-0;
+}
+
+.section-item {
+  @apply max-w-[1150px] md:p-[9.6rem] relative;
+}
+
+.section-heading {
+  @apply text-6xl font-bold text-brand-white mb-6;
+}
+
+.section-subheading {
+  @apply text-2xl font-bold text-brand-white mb-6;
+}
+
+.section-content {
+  @apply text-[18px] font-extralight text-brand-white;
+}
+
+.para-space {
+  @apply mb-6;
+}
+
+.header-icon {
+  @apply fill-gray-fill hover:fill-neon-green;
+}
+
+.sidebar-item {
+  @apply w-full h-[100px] text-center text-vertical hover:text-[#dddee4] hover:bg-[#242424] hover:border-r-[1px] hover:border-[#0aff9d] flex items-center justify-center cursor-pointer;
+}
+
+.capsule {
+  @apply rounded-full text-[16px] px-2 py-1 bg-button-gray text-brand-white font-normal;
+}
+
+.active {
+  @apply text-[#dddee4] bg-[#242424] border-r-[1px] border-[#0aff9d];
 }
